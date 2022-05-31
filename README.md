@@ -2,6 +2,15 @@
 
 ---
 
+## Contents
+  - [Flowchart](#flowchart)
+  - [Operational Mode](#operational-mode)
+  - [Conversion Mode](#conversion-mode)
+  - [Help Mode](#help-mode)
+  - [Mode Control](#mode-control)
+
+---
+
 ## Flowchart
 ![Flowchart](flowchart.png "Flowchart")
 
