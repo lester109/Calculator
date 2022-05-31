@@ -12,7 +12,7 @@
 ---
 
 ## Flowchart
-![Flowchart](flowchart.png "Flowchart")
+![Flowchart](/img/flowchart.png "Flowchart")
 
 ---
 
