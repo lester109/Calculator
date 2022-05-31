@@ -328,4 +328,91 @@ Measuring Type: Mass/Weight (lb)    Value: 14.000
 
 ---
 
+## Help Mode
+  - Help Mode outputs the help messages based on the user's input.
+
+### Code
+```C
+void helps_ ()
+{
+    char h_[MAX];
+    int argc;
+
+    printf("\n[MODE]: Help Mode On\n\n");
+    
+    while (RUNNING)    
+    {
+        printf(">> ");
+        argc = scanf(" %s", h_);
+        
+        if (!strcmp(h_, helps[0]))
+        {
+            puts(operational_);
+        }
+        else if (!strcmp(h_, helps[1]))
+        {
+            puts(conversion_);
+        }
+        else if (!strcmp(h_, "e") || !strcmp(h_, "exit"))
+        {
+            break;
+        }
+        else
+        {
+          printf("Invalid help command (%s)\n", h_);
+        };
+    }
+}
+```
+
+---
+
+## Mode Control
+  - Mode Control will control and run which mode the user wants and will output an error message if mode is invalid.
+
+### Code
+```C
+int in_modes(char *mode)
+{
+    for (int i=0; i<4; i++)
+        {
+            if (!strcmp(mode, all_modes[i]))
+            {
+                return 1;
+            }
+            else
+            {
+                continue;
+            }
+        }
+
+    return 0;
+}
+
+void eval_mode(int mode)
+{
+    switch (mode)
+        {
+            case 0:
+                helps_();
+                break;
+            case 1:
+                operational(); break;
+            case 2:
+                conversion(); break;
+        }
+}
+
+int get_mode(char *mode)
+{
+    for (int i=0; i < 4; i++)
+        {
+            if (!strcmp(mode, all_modes[i])){return i;}
+        }
+    return 6;
+}
+```
+
+---
+
 ## Thanks for Watching :>
